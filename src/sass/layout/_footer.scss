@@ -1,0 +1,137 @@
+.page-footer {
+  margin-bottom: 62px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 12px;
+  }
+}
+
+.footer__title {
+  text-transform: uppercase;
+  @include font(18px, 700, 22px, 0.03em, var(--text-color-main));
+  margin-bottom: 16px;
+
+  @media screen and (min-width: $tablet) {
+    @include font(26px, 700, 32px, 0.04em, var(--text-color-main));
+  }
+
+  @media screen and (min-width: $desktop) {
+    @include font(30px, 400, 37px, 0.04em, var(--text-color-main));
+  }
+}
+
+.footer-container {
+  margin-bottom: 42px;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.footer__subtitle {
+  text-transform: uppercase;
+  @include font(34px, 700, 41px, 0.04em, var(--text-color-main));
+
+  @media screen and (min-width: $tablet) {
+    @include font(48px, 700, 59px, 0.06em, var(--text-color-main));
+  }
+
+  @media screen and (min-width: $desktop) {
+    @include font(58px, 700, 71px, 0.06em, var(--text-color-main));
+  }
+}
+
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  gap: 27px;
+  margin-bottom: 28px;
+}
+
+.social__link {
+  display: flex;
+  background-color: var(--social-bg-color);
+  border-radius: 50%;
+}
+
+.social__icon {
+  width: 34px;
+  height: 34px;
+  fill: var(--social-color);
+  transition: fill var(--speed-animation) var(--animation-type),
+    width var(--speed-animation) var(--animation-type),
+    height var(--speed-animation) var(--animation-type);
+
+  &:hover {
+    fill: var(--social-color-accent);
+  }
+
+  &:focus {
+    fill: var(--social-color-accent);
+    width: 38px;
+    height: 38px;
+  }
+}
+
+.contact-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  gap: 3px;
+  margin-bottom: 40px;
+
+  @include font(12px, 700, 18px, 0.03em, var(--text-color-footer-contact));
+
+  @media screen and (min-width: $tablet) {
+    @include font(14px, 700, 18px, 0.03em, var(--text-color-footer-contact));
+  }
+
+  @media screen and (min-width: $desktop) {
+    @include font(16px, 700, 18px, 0.03em, var(--text-color-footer-contact));
+  }
+
+  &__tel {
+    color: var(--text-color-main);
+
+    transition: color var(--speed-animation) var(--animation-type);
+
+    &:focus,
+    &:hover {
+      color: var(--text-color-accent);
+    }
+  }
+}
+
+.footer__line {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid var(--border-line);
+  width: 100%;
+}
+
+.reserved {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 280px;
+  margin-top: 16px;
+  // margin-left: auto;
+  // margin-right: auto;
+  // margin-top: 16px;
+  // margin-bottom: 62px;
+
+  @include font(14px, 700, 15px, 0.03em, var(--text-color-secondary-footer));
+
+  @media screen and (min-width: $tablet) {
+    margin-top: 14px;
+    @include font(14px, 700, 18px, 0.02em, var(--text-color-secondary-footer));
+  }
+
+  @media screen and (min-width: $tablet) {
+    margin-top: 12px;
+    @include font(12px, 700, 18px, 0.02em, var(--text-color-secondary-footer));
+  }
+}

@@ -1,0 +1,209 @@
+.header__button,
+.about__button {
+  padding: 12px 33px;
+  border-radius: 10px;
+  border: none;
+
+  @include font(14px, 600, 18px, 0.03em, var(--text-color-button));
+
+  background-color: var(--button-color-main);
+
+  transition: background-color var(--speed-animation) var(--animation-type),
+    color var(--speed-animation) var(--animation-type),
+    fill var(--speed-animation) var(--animation-type);
+
+  &:hover {
+    background-color: var(--button-color-accent);
+  }
+
+  &:focus {
+    background-color: var(--button-color-accent);
+    color: var(--text-color-main);
+    fill: var(--text-color-main);
+  }
+}
+
+.hero__button {
+  padding: 7px 16px;
+  border-radius: 10px;
+  background-color: transparent;
+
+  border: 2px solid var(--button-color-main);
+
+  @include font(8px, 600, 10px, 0.03em, var(--text-color-button));
+
+  @media screen and (min-width: $desktop) {
+    @include font(14px, 600, 18px, 0.03em, var(--text-color-button));
+  }
+
+  transition: border-color var(--speed-animation) var(--animation-type),
+    color var(--speed-animation) var(--animation-type);
+
+  &:hover {
+    border-color: var(--button-color-accent);
+  }
+
+  &:focus {
+    color: var(--text-color-main);
+  }
+}
+
+.hero__button--frameless {
+  padding: 7px 16px;
+  border: none;
+  background-color: transparent;
+  text-decoration-line: underline;
+
+  @include font(8px, 600, 10px, 0.03em, var(--text-color-button-frameless));
+
+  &:hover {
+    color: var(--text-color-button-frameless-accent);
+  }
+
+  &:focus {
+    color: var(--text-color-main);
+    fill: var(--text-color-main);
+  }
+
+  @media screen and (min-width: $desktop) {
+    @include font(14px, 600, 17px, 0.03em, var(--text-color-button-frameless));
+  }
+}
+
+.product-cards__button,
+.hero__button--arrow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 40px;
+  height: 15px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  overflow: hidden;
+
+  transition: width var(--speed-animation) var(--animation-type);
+
+  &:focus {
+    width: 50px;
+  }
+
+  &:focus .product-cards__icon,
+  &:focus .hero__icon--arrow {
+    left: 0;
+    width: 50px;
+  }
+
+  .product-cards__icon,
+  .hero__icon--arrow {
+    position: absolute;
+    left: -10px;
+    width: 40px;
+    height: 15px;
+
+    transition: width var(--speed-animation) var(--animation-type),
+      left var(--speed-animation) var(--animation-type);
+
+    &:hover {
+      left: 0;
+    }
+  }
+}
+
+.contacts__button {
+  min-width: 196px;
+  padding: 12px 0;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--button-color-main);
+
+  @include font(14px, 600, 18px, 0.03em, var(--text-color-button));
+
+  transition: background-color var(--speed-animation) var(--animation-type),
+    border var(--speed-animation) var(--animation-type),
+    color var(--speed-animation) var(--animation-type),
+    fill var(--speed-animation) var(--animation-type);
+
+  &:hover {
+    background-color: var(--button-color-accent);
+  }
+
+  &:focus {
+    background-color: var(--button-color-accent);
+    color: var(--text-color-main);
+    fill: var(--text-color-main);
+  }
+
+  &--without-bg {
+    background-color: transparent;
+    border: 2px solid var(--button-color-main);
+    color: var(--text-color-button);
+
+    &:hover {
+      background-color: transparent;
+      border-color: var(--button-color-accent);
+    }
+
+    &:focus {
+      background-color: var(--button-color-accent);
+      color: var(--text-color-main);
+      fill: var(--text-color-main);
+    }
+  }
+}
+
+.menu__button-open {
+  border: none;
+  background-color: transparent;
+  fill: var(--social-color-accent);
+  transition: fill var(--speed-animation) var(--animation-type);
+
+  &:hover {
+    fill: var(--button-color-main);
+  }
+}
+
+.modal__button-open {
+  padding: 12px 34px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--button-color-main);
+  @include font(12px, 600, 15px, 00.03em, var(--text-color-burron-modal));
+
+  @media screen and (min-width: $tablet) {
+    @include font(14px, 600, 17px, 00.03em, var(--text-color-burron-modal));
+  }
+
+  &:hover {
+    background-color: var(--button-color-accent);
+  }
+
+  &:focus {
+    background-color: var(--button-color-accent);
+    color: var(--text-color-main);
+  }
+}
+
+.modal__button-close {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  fill: var(--text-color-button);
+
+  .modal__icon-close {
+    width: 20px;
+    height: 20px;
+
+    @media screen and (min-width: $tablet) {
+      width: 15px;
+      height: 15px;
+    }
+
+    transition: fill var(--speed-animation) var(--animation-type);
+
+    &:hover,
+    &:focus {
+      fill: var(--button-color-main);
+    }
+  }
+}

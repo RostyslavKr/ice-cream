@@ -1,0 +1,29 @@
+.data-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 6;
+
+  width: 100vw;
+  height: 100vh;
+
+  overflow: auto;
+  // padding-top: 20px;
+  // padding-bottom: 20px;
+  // &::-webkit-scrollbar {
+  //   display: none;
+  // }
+
+  visibility: visible;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  transition: opacity var(--speed-animation) var(--animation-type),
+    visibility var(--speed-animation) var(--animation-type);
+
+  &.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+}

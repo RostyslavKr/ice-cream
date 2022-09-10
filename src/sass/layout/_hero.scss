@@ -1,0 +1,245 @@
+.hero {
+  &-container {
+    position: relative;
+    @media screen and (max-width: $to-tablet) {
+      width: 320px;
+      height: 392px;
+    }
+
+    @media screen and (min-width: $tablet) {
+      height: 311px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      height: 546px;
+    }
+  }
+  height: 502px;
+  padding-top: 110px;
+  background-image: url('../images/mobile/mobile-hero/mobile-hero-buttons@1x.png');
+  background-size: 320px, cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+  @media (min-device-pixel-ratio: 2) and (max-width: $to-tablet),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url('../images/mobile/mobile-hero/mobile-hero-buttons@2x.png');
+  }
+
+  @media screen and (min-width: $tablet) {
+    height: 415px;
+    padding-top: 104px;
+    background-image: url('../images/tablet/tablet-hero/tablet-hero-buttons@1x.png');
+    background-size: 768px, cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url('../images/tablet/tablet-hero/tablet-hero-buttons@2x.png');
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    height: 664px;
+    padding-top: 118px;
+    background-image: url('../images/desktop/desktop-hero/desktop-hero-buttons@1x.png');
+    background-size: 1200px, cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+
+    @media (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url('../images/desktop/desktop-hero/desktop-hero-buttons@2x.png');
+    }
+  }
+
+  &__title {
+    width: 247px;
+    font-family: var(--title-font);
+    @include font(26px, 400, 33px, 0.04em, var(--text-color-main));
+    text-transform: uppercase;
+
+    @media screen and (min-width: $tablet) {
+      @include font(18px, 400, 23px, 0.03em, var(--text-color-main));
+      width: 181px;
+
+      &-span {
+        font-size: 24px;
+      }
+    }
+    @media screen and (min-width: $desktop) {
+      @include font(38px, 400, 48px, 0.04em, var(--text-color-main));
+      width: 367px;
+
+      &-span {
+        @include font(38px, 400, 48px, 0.04em, var(--text-color-main));
+      }
+    }
+  }
+
+  &__battons-flex {
+    display: flex;
+    margin-top: 32px;
+    margin-bottom: 28px;
+
+    @media screen and (min-width: $tablet) {
+      margin-top: 20px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin-top: 28px;
+      margin-bottom: 42px;
+    }
+  }
+
+  &__button-how {
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+  }
+
+  &__many-ice-description {
+    @media screen and (max-width: $to-tablet) {
+      display: none;
+    }
+
+    @include font(12px, 400, 14px, 0.03em, var(--text-color-main));
+    width: 197px;
+
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__icon--fill-arrow {
+    fill: var(--text-color-main);
+  }
+
+  &__many-ice-cream {
+    width: 152px;
+
+    @media screen and (min-width: $desktop) {
+      width: 225px;
+    }
+  }
+
+  &__ice-cream {
+    position: absolute;
+    bottom: 0;
+    left: 82px;
+
+    @media screen and (min-width: $tablet) {
+      left: 418px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      left: 651px;
+    }
+  }
+
+  &_ice-blur {
+    filter: blur(53.681px);
+    position: absolute;
+    bottom: 0;
+    left: 82px;
+    z-index: -1;
+
+    // підсвідка
+    animation: pulse 3s linear infinite;
+
+    @media screen and (min-width: $tablet) {
+      left: 418px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      left: 651px;
+    }
+  }
+
+  &__filter {
+    position: absolute;
+    bottom: 0;
+    left: 82px;
+    z-index: 4;
+    background: rgba(252, 252, 252, 0.44);
+    filter: blur(53.681px);
+  }
+}
+
+// підсвідка
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.6);
+    transform: scale(1.6);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.many-ice-block {
+  @media screen and (max-width: $to-tablet) {
+    display: none;
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    align-items: center;
+    gap: 33px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    gap: 14px;
+  }
+}
+
+.restaurants {
+  @media screen and (max-width: $to-tablet) {
+    display: none;
+  }
+
+  position: absolute;
+  top: -10px;
+  right: 32px;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: $desktop) {
+    top: 8px;
+    right: 16px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__number {
+    @include font(28px, 900, 34px, 0.04em, var(--text-color-secondary));
+    text-align: right;
+    text-transform: uppercase;
+
+    @media screen and (min-width: $desktop) {
+      @include font(46px, 900, 56px, 0.04em, var(--text-color-secondary));
+    }
+  }
+
+  &_type {
+    @include font(8px, 400, 10px, 0.03em, var(--text-color-main));
+    text-align: right;
+
+    @media screen and (min-width: $desktop) {
+      @include font(14px, 400, 17px, 0.03em, var(--text-color-main));
+    }
+  }
+}
